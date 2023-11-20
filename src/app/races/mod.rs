@@ -1,4 +1,4 @@
-mod race;
+pub mod race;
 
 mod dwarf;
 mod elf;

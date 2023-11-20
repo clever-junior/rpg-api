@@ -1,5 +1,5 @@
-mod energy;
-mod archetype;
+pub mod energy;
+pub mod archetype;
 
 mod mage;
 mod necromancer;
