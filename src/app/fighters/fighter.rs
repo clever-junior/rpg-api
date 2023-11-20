@@ -1,18 +1,18 @@
-use crate::app::archetypes::energy::EnergyType;
+use crate::app::energy::EnergyType;
 
 struct FighterAttributes {
-  life_points: u32,
-  strength: u32,
-  defense: u32,
-  energy: Option<EnergyType>
+    life_points: u32,
+    strength: u32,
+    defense: u32,
+    energy: Option<EnergyType>,
 }
 
 pub trait Figther {
-  fn attack(enemy: Self);
+    fn attack(enemy: Self);
 
-  fn special(enemy: Self);
+    fn special(enemy: Self);
 
-  fn level_up();
+    fn level_up();
 
-  fn receive_damage(attack_point: u32) -> u32;
+    fn receive_damage(attack_point: u32) -> u32;
 }

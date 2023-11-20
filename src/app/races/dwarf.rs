@@ -1,13 +1,13 @@
-use super::race::{RaceAttributes, Race};
+use super::race::{Race, RaceMethods};
 
 pub struct Dwarf {
-    attr: RaceAttributes,
+    attr: Race,
     max_life_points: u32
 }
 
-impl Race for Dwarf {
+impl RaceMethods for Dwarf {
     fn new(name: String, dexterity: u32) -> Self {
-        let attr = RaceAttributes { name, dexterity };
+        let attr = Race { name, dexterity };
 
         Self { attr, max_life_points: 86 }
     }

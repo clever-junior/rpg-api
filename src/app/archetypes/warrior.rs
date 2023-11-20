@@ -1,17 +1,31 @@
-use super::{energy::EnergyType, archetype::{ArchetypeAttributes, Archetype}};
+use crate::app::energy::EnergyType;
+
+use super::archetype::{Archetype, ArchetypeMethods};
 
 struct Warrior {
-    attr: ArchetypeAttributes,
+    archetype: Archetype,
 }
 
-impl Archetype for Warrior {
+impl ArchetypeMethods for Warrior {
     fn new(name: String) -> Self {
-        let attr = ArchetypeAttributes {
+        let archetype = Archetype {
             name,
             special: 0,
             cost: 0,
         };
-        Self { attr }
+        Self { archetype }
+    }
+
+    fn get_cost(&self) -> u32 {
+        self.archetype.cost
+    }
+
+    fn get_name(&self) -> String {
+        self.archetype.name
+    }
+
+    fn get_special(&self) -> u32 {
+        self.archetype.special
     }
 
     fn get_energy_type() -> EnergyType {

@@ -5,8 +5,8 @@ pub enum EnergyType {
 }
 
 pub struct Energy {
-    type_: EnergyType,
-    amount: u32
+    pub type_: EnergyType,
+    pub amount: u32
 }
 
 #[cfg(test)]

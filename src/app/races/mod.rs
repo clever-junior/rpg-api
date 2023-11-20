@@ -1,6 +1,6 @@
 pub mod race;
 
-mod dwarf;
-mod elf;
-mod halfling;
-mod orc;
+pub mod dwarf;
+pub mod elf;
+pub mod halfling;
+pub mod orc;

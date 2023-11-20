@@ -1,7 +1,6 @@
-pub mod energy;
 pub mod archetype;
 
-mod mage;
-mod necromancer;
-mod warrior;
-mod ranger;
+pub mod mage;
+pub mod necromancer;
+pub mod warrior;
+pub mod ranger;

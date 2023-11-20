@@ -1,23 +1,23 @@
-use super::race::{RaceAttributes, Race};
+use super::race::{Race, RaceMethods};
 
-struct Elf {
-    attr: RaceAttributes,
+pub struct Elf {
+    race: Race,
     max_life_points: u32
 }
 
-impl Race for Elf {
+impl RaceMethods for Elf {
     fn new(name: String, dexterity: u32) -> Self {
-        let attr = RaceAttributes { name, dexterity };
+        let race = Race { name, dexterity };
 
-        Self { attr, max_life_points: 99 }
+        Self { race, max_life_points: 99 }
     }
 
     fn get_name(&self) -> &str {
-        &self.attr.name
+        &self.race.name
     }
 
     fn get_dexterity(&self) -> u32 {
-        self.attr.dexterity
+        self.race.dexterity
     }
     
     fn get_max_life_points(&self) -> u32 {

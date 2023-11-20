@@ -1,10 +1,10 @@
 
-pub struct RaceAttributes {
+pub struct Race {
   pub name: String,
   pub dexterity: u32,
 }
 
-pub trait Race {
+pub trait RaceMethods {
   fn new(name: String, dexterity: u32) -> Self;
 
   fn get_name(&self) -> &str;
@@ -23,24 +23,24 @@ mod tests {
   use super::*;
 
   struct SomeRace {
-      attr: RaceAttributes,
+      race: Race,
       max_life_points: u32,
   }
 
-  impl Race for SomeRace {
+  impl RaceMethods for SomeRace {
       fn new(name: String, dexterity: u32) -> Self {
           Self {
-              attr: RaceAttributes { name, dexterity },
+              race: Race { name, dexterity },
               max_life_points: 10,
           }
       }
 
       fn get_name(&self) -> &str {
-          &self.attr.name
+          &self.race.name
       }
 
       fn get_dexterity(&self) -> u32 {
-          self.attr.dexterity
+          self.race.dexterity
       }
 
       fn get_max_life_points(&self) -> u32 {
@@ -50,7 +50,7 @@ mod tests {
 
   #[test]
   fn test_race_attr() {
-      let race = RaceAttributes {
+      let race = Race {
           name: String::from("Name"),
           dexterity: 0,
       };

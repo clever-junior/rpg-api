@@ -1,20 +1,32 @@
-use super::{
-    archetype::{Archetype, ArchetypeAttributes},
-    energy::EnergyType,
-};
+use crate::app::energy::EnergyType;
 
-struct Mage {
-    attr: ArchetypeAttributes,
+use super::archetype::{Archetype, ArchetypeMethods};
+
+pub struct Mage {
+    archetype: Archetype,
 }
 
-impl Archetype for Mage {
+impl ArchetypeMethods for Mage {
     fn new(name: String) -> Self {
-        let attr = ArchetypeAttributes {
+        let archetype = Archetype {
             name,
             special: 0,
             cost: 0,
         };
-        Self { attr }
+
+        Self { archetype }
+    }
+
+    fn get_cost(&self) -> u32 {
+        self.archetype.cost
+    }
+
+    fn get_name(&self) -> String {
+        self.archetype.name
+    }
+
+    fn get_special(&self) -> u32 {
+        self.archetype.special
     }
 
     fn get_energy_type() -> EnergyType {
